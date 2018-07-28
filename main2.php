@@ -12,7 +12,9 @@ include 'conn.php';
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
+ body{
  
+ }
   	label{
   		width: 130px;
   		
@@ -34,7 +36,7 @@ include 'conn.php';
 
   	.form-group{
   		margin-top: 0px;
-  		margin-bottom:5px;
+  		margin-bottom:10px;
   		margin: auto;
   	}
 
@@ -59,9 +61,9 @@ include 'conn.php';
 	}
   	fieldset{
   		border-radius: 5px;
-  		background-color: lightblue;
+  		
   		padding: 20px;
-  		border: 1px solid green;
+  		
   		margin: auto;
   		width: 550px;
 
@@ -79,10 +81,10 @@ include 'conn.php';
       padding: 25px;
     }
     
-  .carousel-inner img {
+  .carousel-inner {
       width: 100%; /* Set width to 100% */
-      margin: auto;
-      min-height:200px;
+    
+     
   }
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -124,6 +126,13 @@ include 'conn.php';
 	padding: 0px;
 }
 
+#myCarousel{
+	background-color: lightgrey;
+	  padding: 10px;
+	  margin-bottom: 5px;
+      
+}
+
 
 </style>
 </head>
@@ -159,7 +168,7 @@ include 'conn.php';
  		    
     <div class="carousel-inner" role="listbox">
 		<div class="form-group">
-			   <label class="labeltop" for="usr">brand:</label>
+			   <label class="labeltop" for="usr">&nbsp; &nbsp; &nbsp; brand &nbsp; &nbsp; &nbsp; &nbsp; </label>
 		         <select name="brand" class="top form-control" id="brand">
 		         	<?php
 
@@ -174,14 +183,14 @@ include 'conn.php';
 		         	?>
        
     		  </select>
-		   	      <label class="labeltop" for="usr">type</label>
+		   	      <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		  		  <select name="type" class="top form-control" id="type">
       	
 		         	 <option value="">select type</option>
 		         	 
         
       </select>
-		      <label class="labeltop" for="usr">code:</label>
+		      <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;code&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		     <select name="code" class="top form-control" id="code">
 		         	
 		         	 <option value="">select code</option>
@@ -192,11 +201,17 @@ include 'conn.php';
 		      <input name="date" type="date" class=" top form-control" id="usr" value="<?php echo date('Y-m-d'); ?>">
 		  </div>
 		      <div class="form-group">	
-		      	  <label class="labeltop" for="usr">price:</label>
-		      <input name="price" step=0.001 type="number" class="price top form-control" id="usr">
-		      <label class="labeltop" for="usr">quantity:</label>
+		      	  <label class="labeltop" for="usr">factory Price &nbsp;</label>
+		      <input name="price" step=0.001 type="number" class="euro top form-control" id="usr">
+		       <label class="labeltop" for="usr">&nbsp;Eu to US Convert &nbsp;&nbsp;</label>
+		      <input name="price" step=0.001 type="number" class="dolarprice top form-control" id="usr">
+		       <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;price:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		      <input name="price" step=0.001 type="number"  class="price top form-control" id="pricee">
+		  </div>
+		   <div class="form-group">	
+		      <label class="labeltop" for="usr">&nbsp; &nbsp; &nbsp; quantity &nbsp; &nbsp;</label>
 		      <input name="quantity" step=0.001 type="number" class="quantity top form-control" id="usr">
-		      <label class="labeltop" for="pwd">quantityofContainer:</label>
+		      <label class="labeltop" for="pwd">Container Quantity:</label>
 		      <input name="quantityofContainer" step=0.001 type="number" class="top form-control" id="pwd">
 		      <label class="labeltop" for="pwd">more info:</label>
 		      <input name="moreinfo" type="text" class="topinfo form-control" id="usr">
@@ -384,7 +399,29 @@ $(document).ready(function(){
     });
 });
 
+// euro to dolar
+$('.form-group').on('input',function() {
+	var euro=0;
+	var dolarprice=1;
+	var price=0;
+	$('.form-group .euro').each(function() {
+				var input=$(this).val();
+				if ($.isNumeric(input)) {
+					euro = parseFloat(input);
+				}
+			});
+			$('.form-group .dolarprice').each(function() {
+				var input=$(this).val();
+				if ($.isNumeric(input)) {
+					dolarprice = parseFloat(input);
+				}
+			});
 
+			
+			var total=0;
+			total=euro*dolarprice;
+			$('#pricee').val(total);
+});
 
 //for expense +s
 	$('.form-group').on('input','.L',function() {
