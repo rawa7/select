@@ -2,15 +2,18 @@
 include 'conn.php';
 
 	?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <title>dal Company</title>
-  <meta charset="utf-8">
+ <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
   <style>
  body{
  
@@ -59,6 +62,7 @@ include 'conn.php';
 	  	left: 0px;
 	  	 
 	}
+
   	fieldset{
   		border-radius: 5px;
   		
@@ -83,8 +87,6 @@ include 'conn.php';
     
   .carousel-inner {
       width: 100%; /* Set width to 100% */
-    
-     
   }
 
   /* Hide the carousel text when the screen is less than 600 pixels wide */
@@ -107,7 +109,7 @@ include 'conn.php';
 }
 
 
-.ri{
+.Ri{
 	width: 110px;
   	display: inline-block;
   	margin: 0px;
@@ -137,30 +139,32 @@ include 'conn.php';
 </style>
 </head>
 <body>
+	
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">Navbar</a>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a class="navbar-brand" href="#">Logo</a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">new brand</a></li>
-        <li><a href="#">new type</a></li>
-        <li><a href="#">price selection</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
+  <!-- Toggler/collapsibe Button -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <!-- Navbar links -->
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li> 
+    </ul>
+  </div> 
 </nav>
+
 <form action="main1.php" method="POST">
 	
 
@@ -168,7 +172,7 @@ include 'conn.php';
  		    
     <div class="carousel-inner" role="listbox">
 		<div class="form-group">
-			   <label class="labeltop" for="usr">&nbsp; &nbsp; &nbsp; brand &nbsp; &nbsp; &nbsp; &nbsp; </label>
+			   <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Brand&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		         <select name="brand" class="top form-control" id="brand">
 		         	<?php
 
@@ -183,7 +187,7 @@ include 'conn.php';
 		         	?>
        
     		  </select>
-		   	      <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+		   	      <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;type&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		  		  <select name="type" class="top form-control" id="type">
       	
 		         	 <option value="">select type</option>
@@ -201,7 +205,7 @@ include 'conn.php';
 		      <input name="date" type="date" class=" top form-control" id="usr" value="<?php echo date('Y-m-d'); ?>">
 		  </div>
 		      <div class="form-group">	
-		      	  <label class="labeltop" for="usr">factory Price &nbsp;</label>
+		      	  <label class="labeltop" for="usr">factory Price&nbsp;</label>
 		      <input name="price" step=0.001 type="number" class="euro top form-control" id="usr">
 		       <label class="labeltop" for="usr">&nbsp;Eu to US Convert &nbsp;&nbsp;</label>
 		      <input name="price" step=0.001 type="number" class="dolarprice top form-control" id="usr">
@@ -209,7 +213,7 @@ include 'conn.php';
 		      <input name="price" step=0.001 type="number"  class="price top form-control" id="pricee">
 		  </div>
 		   <div class="form-group">	
-		      <label class="labeltop" for="usr">&nbsp; &nbsp; &nbsp; quantity &nbsp; &nbsp;</label>
+		      <label class="labeltop" for="usr">&nbsp;&nbsp;&nbsp;&nbsp;quantity&nbsp;&nbsp;&nbsp;&nbsp;</label>
 		      <input name="quantity" step=0.001 type="number" class="quantity top form-control" id="usr">
 		      <label class="labeltop" for="pwd">Container Quantity:</label>
 		      <input name="quantityofContainer" step=0.001 type="number" class="top form-control" id="pwd">
@@ -285,19 +289,22 @@ include 'conn.php';
       		<div class="form-group">
 		     <label>operating</label>
 		      <input name="operating" step=0.001 type="number" class="operating Ri form-control2">
+		     <input name="operatingd" step=0.001 type="number" class="operatingd Ri form-control2" id="operatingd">
 		     
 		      	</div>
 		    
 		      	<div class="form-group">
 		     <label >discount:</label>
 		     <input name="discount" step=0.001 type="number" class="Ri form-control2" >
+		     <input name="discountd" step=0.001 type="number" class="Ri form-control2" >
 
 
 		      	</div>
 		      
 		    <div class="form-group">
 		     <label >profit:</label>
-		     <input name="profit" step=0.001 type="text" class="Bounse Ri form-control2" >
+		     <input name="profit" step=0.001 type="text" class="Bounse Ri form-control2" > <input name="Bounsed" step=0.001 type="text" class="Bounsed Ri form-control2" id="bounsed">
+
 
 			</div>
 		
@@ -308,6 +315,7 @@ include 'conn.php';
 		      </div>
 				
     		</fieldset>
+
         <fieldset>
         		<div class="form-group">
 		     <label >price1</label>
@@ -479,13 +487,14 @@ $('.form-group').on('input',function() {
 	$('.form-group').on('input',function() {
 		var bounse=0;
 			var operating=0;
+		
 			$('.form-group .operating').each(function() {
 				var inputquantity=$(this).val();
 				if ($.isNumeric(inputquantity)) {
 					operating = parseFloat(inputquantity)/100;
 				}
 			});
-			$('.form-group .bounse').each(function() {
+			$('.form-group .Bounse').each(function() {
 				var inputexpense=$(this).val();
 				if ($.isNumeric(inputexpense)) {
 					bounse = parseFloat(inputexpense)/100;
@@ -496,7 +505,10 @@ $('.form-group').on('input',function() {
 			re8=re6+totalprice;
 			re5=bounse*re8;
 			re7=re6+re5+totalprice;
-				$('#result4').val(re7);
+
+			$('#result4').val(re7);
+			$('#bounsed').val(re5);
+			$('#operatingd').val(re6);
 		});
 
 </script>
